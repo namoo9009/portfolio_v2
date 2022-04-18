@@ -1,0 +1,174 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500;600;700;800&display=swap');
+
+
+/* common */
+body{
+    font-family: var(--font-family--normal);
+    background: #151515;
+    color: #fff;
+    word-break: keep-all;
+
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* layout */
+.inner{
+    padding: 0 100px;
+}
+#loading-page{
+    position: ;
+    width: 100%;
+    height: 100vh;
+}
+#wrap{
+    width: 100%;
+    height: 100%;
+}
+#header{
+    padding: 50px 0;
+    width: 100%;
+}
+#main{
+    width: 100%;
+}
+#main>section{
+    width: 100%;
+}
+#footer{
+    width: 100%;
+}
+
+/* custom variables */
+:root{
+    --font-family--italic: 'PT Serif', serif;
+    --font-family--normal:'Gothic A1', sans-serif;
+    --font-weght-bold: 600;
+    --font-weght-semibold: 500;
+    --font-size--h1: 7vmax;
+    --font-size--large: 40px;
+    --font-size--medium: 30px;
+    --font-size--small: 20px;
+    --font-size--text: 16px;
+    --space--large: 80px;
+
+}
+
+/* loading-page */
+#loading-page{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: -0.2vw;
+    font-size: var(--font-size--h1);
+    font-weight: var(--font-weght-bold);
+    line-height: 1;
+}
+#loading-page h1{
+    margin-bottom: calc(var(--font-size--h1) / 3);
+    font-weight: var(--font-weght-bold);
+}
+#loading-page h1 .num{
+    padding: 0 calc(var(--font-size--h1) / 2);
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    font-size: calc(var(--font-size--h1) / 2.2);
+    vertical-align: top;
+}
+#loading-page p .change.on{
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;    
+}
+
+/* header */
+.header-inner{
+    display: flex;
+    font-size: var(--font-size--text);
+}
+.header-inner>h1{
+    flex: 1;
+    font-family: 'Noto Serif Display', serif;
+    line-height: 1;
+    letter-spacing: 0.1px;
+    font-weight: var(-font-weght-bold);
+    font-size: var(--font-size--medium);
+
+}
+.header-inner>span{
+    flex: 2;
+}
+.header-inner>nav{
+    flex: 1;
+
+}
+.header-inner>nav>ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* main */
+#main h1{
+    padding-bottom: var(--space--large);
+    margin-bottom: var(--space--large);
+    width: 65vw;
+    border-bottom: 1px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.2vw;
+    font-size: var(--font-size--h1);
+    font-weight: var(--font-weght-bold);
+}
+/* about */
+.about-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.about-inner h1{
+    position: relative;
+    left: 0;
+    line-height: 1;
+}
+.about-inner h1 span{
+    display: block;
+}
+.about-inner h2{
+    text-align: left;
+    padding-bottom: calc(var(--space--large) * 0.8);
+    font-size: var(--font-size--medium);
+    font-weight: 500;
+}
+.about-inner>div{
+    width: 65vw;
+}
+.about-inner>div .introduce{
+    display: flex;
+}
+.about-inner>div .introduce .profile dd img{
+    height: 350px;
+}
+.about-inner>div .introduce .discription{
+    padding-left: calc(var(--space--large) * 0.7);
+    width: 60%;
+}
+.about-inner>div .introduce .discription .self{
+    line-height: 1.3;
+}
+.about-inner>div .introduce .discription dl{
+    padding-bottom: 20px;
+}
+.about-inner>div .introduce .discription dl dt{
+    padding-bottom: 5px;
+    font-size: calc(var(--font-size--text) * 1.5);
+    font-weight: var(--font-weght-bold);
+}
+.about-inner>div .introduce .discription dl dd{
+    font-size: var(--font-size--text);
+}
