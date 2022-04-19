@@ -1,0 +1,295 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap');
+
+/* common */
+body{
+    font-family: var(--font-family--normal);
+    background: #151515;
+    color: #fff;
+    word-break: break-all;
+
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* layout */
+.inner{
+    padding: 0 100px;
+}
+#loading-page{
+    position: ;
+    width: 100%;
+    height: 100vh;
+}
+#wrap{
+    width: 100%;
+    height: 100%;
+}
+#header{
+    padding: 50px 0;
+    width: 100%;
+}
+#main{
+    width: 100%;
+}
+#main>section{
+    padding-top: 100px;
+    width: 100%;
+}
+#footer{
+    width: 100%;
+}
+
+/* custom variables */
+:root{
+    --font-family--italic: 'PT Serif', serif;
+    --font-family--normal:'Gothic A1', sans-serif;
+    --font-weght-bold: 700;
+    --font-weght-semibold: 500;
+    --font-size--h1: 7vmax;
+    --font-size--large: 40px;
+    --font-size--medium: 30px;
+    --font-size--small: 20px;
+    --font-size--text: 16px;
+    --space--large: 80px;
+
+}
+
+/* loading-page */
+#loading-page{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: -0.2vw;
+    font-size: var(--font-size--h1);
+    font-weight: var(--font-weght-bold);
+    line-height: 1.1;
+}
+#loading-page h1{
+    margin-bottom: calc(var(--font-size--h1) / 3);
+    font-weight: var(--font-weght-bold);
+}
+#loading-page h1 .num{
+    padding: 0 calc(var(--font-size--h1) / 2);
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    font-size: calc(var(--font-size--h1) / 2.2);
+    vertical-align: top;
+}
+#loading-page p .change.on{
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;    
+}
+
+/* header */
+.header-inner{
+    display: flex;
+    font-size: var(--font-size--text);
+}
+.header-inner>h1{
+    flex: 1;
+    font-family: 'Noto Serif Display', serif;
+    line-height: 1;
+    letter-spacing: 0.1px;
+    font-weight: var(-font-weght-bold);
+    font-size: var(--font-size--medium);
+
+}
+.header-inner>span{
+    flex: 2;
+}
+.header-inner>nav{
+    flex: 1;
+
+}
+.header-inner>nav>ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* main */
+#main h1{
+    padding-bottom: var(--space--large);
+    /* margin-bottom: var(--space--large); */
+    width: 70vw;
+    /* border-bottom: 1px solid #fff; */
+    text-transform: uppercase;
+    letter-spacing: -0.2vw;
+    font-size: var(--font-size--h1);
+    font-weight: var(--font-weght-bold);
+}
+/* about */
+.about-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.about-inner h1{
+    position: relative;
+    left: 0;
+    line-height: 1.1;
+}
+.about-inner h1 span{
+    display: block;
+}
+.about-inner h1 .change{
+    position: relative;
+    display: inline-block;
+}
+.about-inner h1 .change:hover{
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;  
+}
+.about-inner h1 .change::after{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    content: "";
+    width: 100%;
+    height: 7px;
+    background: #fff;
+}
+.about-inner h1 .change:hover::after{
+    display: none;
+}
+
+.js-move{
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    display: inline-flex;
+    flex-direction: column;
+    right: -100px;
+    bottom: -100px;
+    width: 400px;
+    height: 400px;
+}
+.js-move .txt{
+    position: relative;
+    top: 20px;
+    left: 25px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 4vw;
+    color: #000;
+    text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;
+}
+.js-move .txt::after{
+    position: absolute;
+    content: attr(data-text);
+    top: 0;
+    left: 0;
+    color: #EFD81D;
+    animation: js-wave 3s ease-in-out infinite;
+}
+@keyframes js-wave{
+	0%, 100% {
+		clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+	}
+
+	50% {
+		clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+	}
+}
+
+.about-inner .icon-js{
+    width: 100%;
+    height: 100%;
+    font-size: 25vw;
+    /* width: 450px;
+    height: 450px;
+    font-size: 450px; */
+    color: #EFD81D;
+    transition: 0.4s;
+}
+.about-inner h2{
+    text-align: left;
+    padding-bottom: calc(var(--space--large) * 0.8);
+    font-size: var(--font-size--medium);
+    font-weight: 500;
+}
+.about-inner>div{
+    width: 70vw;
+}
+.about-inner>div .introduce{
+    display: flex;
+}
+.about-inner>div .introduce .profile dd img{
+    height: 365px;
+    filter: brightness(80%);
+}
+.about-inner>div .introduce .discription{
+    padding-left: calc(var(--space--large) * 0.7);
+    max-width: 550px;
+    min-height: 350px;
+}
+.about-inner>div .introduce .discription dl{
+    padding-bottom: 25px;
+}
+.about-inner>div .introduce .discription dl dt{
+    padding-bottom: 0px;
+    font-size: calc(var(--font-size--text) * 1.5);
+    font-weight: var(--font-weght-bold);
+}
+.about-inner>div .introduce .discription dl dd{
+    font-size: var(--font-size--text);
+}
+.about-inner>div .introduce .discription .self{
+    line-height: 1.3;
+}
+.about-inner>div .introduce .discription .channel dd{
+    position: relative;
+    display: inline-block;
+    margin-right: 7px;
+    /* text-decoration: underline; */
+}
+.about-inner>div .introduce .discription .channel dd::after{
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+.about-inner>div .introduce .discription .channel dd:nth-of-type(1)::before{
+    position: absolute;
+    left: 115%;
+    top: 2px;
+    content: "";
+    width: 2px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(15deg);
+}
+.about-inner .scroll{
+    position: fixed;
+    left: 100px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* background: #FFA63D; */
+    border: 1px solid #fff;
+}
+.about-inner .scroll::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+}

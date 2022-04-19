@@ -1,0 +1,27 @@
+/* loading-page */
+#loading-page{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: -0.2vw;
+    font-size: var(--font-size--h1);
+    font-weight: var(--font-weght-bold);
+    line-height: 1.1;
+}
+#loading-page h1{
+    margin-bottom: calc(var(--font-size--h1) / 3);
+    font-weight: var(--font-weght-bold);
+}
+#loading-page h1 .num{
+    padding: 0 calc(var(--font-size--h1) / 2);
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    font-size: calc(var(--font-size--h1) / 2.2);
+    vertical-align: top;
+}
+#loading-page p .change.on{
+    font-family: var(--font-family--italic);
+    font-weight: 300;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;    
+}

@@ -1,0 +1,13 @@
+/* projects.css */
+.projects-inner h1{
+    position: relative;
+}
+.projects-inner h1::after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
