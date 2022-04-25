@@ -48,10 +48,12 @@ window.onload = () => {
     function headerEffect() {
         setProperty();
         console.log(scrollY)
-        if(scrollY > 0) {
-            header.classList.add('active')
+        if(scrollY > 70) {
+            header.classList.add('active');
+            sectionAbout.classList.add('active');
         } else {
-            header.classList.remove('active')
+            header.classList.remove('active');
+            sectionAbout.classList.remove('active');
         }
     }
 

@@ -1,261 +1,60 @@
 /* about.css */
 
-/* about */
-#about::after{
-    pointer-events: none;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    width: 100vw;
-    height: 100%;
-    background-color: #151515;
-    opacity: 0;
-    transition: 1s;
-}
-#about.active .about-inner h1{
-    pointer-events: none;
-}
-#about.active .about-inner h1::after{
-    background-color: #151515;
-    opacity: 1;
-}
-.about-inner{
-    /* padding-top: 200px; */
-    border: 1px solid red;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /* transition: 1s; */
-    
-}
-.about-inner h1{
-    position: absolute;
-    top: 300px;
-    right: 100px;
-    line-height: 1.1;
-    /* transform: translateY(-200px); */
-}
-/* .about-inner h1::after{
-    pointer-events: none;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #151515;
-    opacity: 0;
-    transition: 1s;
-} */
-.about-inner h1 span{
-    display: block;
-    
-}
-.about-inner h1 .change{
-    position: relative;
-    display: inline-block;
-}
-.about-inner h1 .change:hover{
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;  
-}
-.about-inner h1 .change::after{
-    position: absolute;
-    left: 0;
-    bottom: 0.5vw;
-    content: "";
-    width: 100%;
-    height: 0.4vw;
-    background: #fff;
-}
-.about-inner h1 .change:hover::after{
-    display: none;
-}
-/* JS icon-move */
+.about-inner{border: 1px solid red; display: flex; flex-direction: column;}
+.about-inner h1{position: absolute; top: 300px; left: 350px; line-height: 1.1;}
+.about-inner h1 span{display: block;}
+/* 글자효과 */
+.about-inner h1 .change{position: relative; display: inline-block;}
+.about-inner h1 .change::after{position: absolute; left: 0; bottom: 0.5vw; content: ""; width: 100%; height: 0.4vw; background: #fff;}
+.about-inner h1 .change:hover{color: transparent; -webkit-text-stroke: 1px #fff;}
+.about-inner h1 .change:hover::after{display: none;}
 @keyframes js-wave{
 	0%, 100% {
 		clip-path: polygon(0% 47%, 10% 48%, 33% 54%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
 	}
-
 	50% {
 		clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
 	}
 }
-.js-move{
-    opacity: 0;
-    display: none;
-    z-index: -1;
-    position: absolute;
-    display: inline-flex;
-    flex-direction: column;
-    right: -140px;
-    bottom: -100px;
-    width: 24vw;
-    height: 28vw;
-}
-.js-move .txt{
-    position: relative;
-    top: 0;
-    left: 0px;
-    transform: translateX(1.35vw) translateY(0.9vw);
-    font-family: 'Noto Sans KR', sans-serif;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 4vw;
-    color: #000;
-    text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;
-}
-.js-move .txt::after{
-    position: absolute;
-    content: attr(data-text);
-    top: 0;
-    left: 0;
-    color: #EFD81D;
-    animation: js-wave 3s ease-in-out infinite;
-}
-.js-move .icon-js{
-    width: 100%;
-    height: 100%;
-    font-size: 25vw;
-    color: #EFD81D;
-    transition: 0.4s;
-}
+.about-inner h1 .js-move{opacity: 0; display: none; z-index: -1; position: absolute; display: inline-flex; flex-direction: column; right: -250px; bottom: -100px; width: 24vw; height: 28vw;}
+.about-inner h1 .js-move .txt{position: relative; top: 0; left: 0px; transform: translateX(1.35vw) translateY(0.9vw); font-family: 'Noto Sans KR', sans-serif; text-transform: uppercase; font-weight: 900; font-size: 4vw; color: #000; text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;}
+.about-inner h1 .js-move .txt::after{position: absolute; content: attr(data-text); top: 0; left: 0; color: #EFD81D; animation: js-wave 3s ease-in-out infinite;}
+.about-inner h1 .js-move .icon-js{width: 100%; height: 100%; font-size: 25vw; color: #EFD81D; transition: 0.4s;}
 
 /* introduce */
-.introduce{
-    /* border: 1px solid #fff; */
-    margin-top: 700px;
-}
-#about.active  .introduce{
-    /* transform: translateY(0px); */
-}
-.introduce h2{
-    text-align: left;
-    padding: calc(var(--font-size--h1) * 0.5) 0;
-    font-size: calc(var(--font-size--h1) * 0.3);
-    font-weight: 500;
-}
-.introduce-inner{
-    width: 70vw;
-}
-.introduce-inner{
-    display: flex;
-}
-.introduce-inner .profile dd.profile-img{
-    width: 321px;
-    height: 365px;
-    background: url(../images/profile3.png) no-repeat 50% 50%;
-    background-size: 100%;
-    transition: 300ms linear;
-}
-.introduce-inner .profile dd.profile-img:hover{
-    background-size: 110%;
-}
+.about-inner .introduce{margin-top: 700px;}
+.about-inner .introduce h2{text-align: left; padding: calc(var(--font-size--h1) * 0.5) 0; font-size: calc(var(--font-size--h1) * 0.3); font-weight: 500;}
+.about-inner .introduce .introduce-inner{width: 1200px;}
+.about-inner .introduce .introduce-inner{display: flex;}
+.about-inner .introduce .introduce-inner .profile .profile-img{width: 321px; height: 365px; background: url(../images/profile3.png) no-repeat 50% 50%; background-size: 100%; transition: 300ms linear;}
+.about-inner .introduce .introduce-inner .profile .profile-img:hover{background-size: 110%;}
 
-.introduce-inner .discription{
-    padding-left: calc(var(--font-size--h1) * 0.45);
-    max-width: 550px;
-    min-height: 350px;
-}
-.introduce-inner .discription dl{
-    padding-bottom: 25px;
-}
-.introduce-inner .discription dl dt{
-    padding-bottom: 0px;
-    font-size: calc(var(--font-size--text) * 1.3);
-    font-weight: var(--font-weght-bold);
-
-}
-.introduce-inner .discription dl dd{
-    font-size: var(--font-size--text);
-    transition: 1s;
-}
-/* .introduce-inner .discription dl:nth-of-type(1) dd{
-    transition-delay: 0s;
-}
-.introduce-inner .discription dl:nth-of-type(2) dd{
-    transition-delay: 0.3s;
-}
-.introduce-inner .discription dl:nth-of-type(3) dd{
-    transition-delay: 0.6s;
-}
-.introduce-inner .discription dl:nth-of-type(4) dd{
-    transition-delay: 1s;
-} */
-#about.active .introduce-inner .discription dl dd{
-    opacity: 1;
-}
-.introduce-inner .discription .self{
-    line-height: 1.3;
-}
-.introduce-inner .discription .channel dd{
-    position: relative;
-    display: inline-block;
-    margin-right: 7px;
-    /* text-decoration: underline; */
-}
-.introduce-inner .discription .channel dd::after{
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background: #fff;
-}
-.aintroduce-inner .discription .channel dd:nth-of-type(1)::before{
-    position: absolute;
-    left: 115%;
-    top: 2px;
-    content: "";
-    width: 2px;
-    height: 20px;
-    background: #fff;
-    transform: rotate(15deg);
-}
+.about-inner .introduce .introduce-inner .discription{padding-left: calc(var(--font-size--h1) * 0.45); max-width: 550px; min-height: 350px;}
+.about-inner .introduce .introduce-inner .discription dl{padding-bottom: 25px;}
+.about-inner .introduce .introduce-inner .discription dl dt{padding-bottom: 0px; font-size: calc(var(--font-size--text) * 1.3); font-weight: var(--font-weght-bold);}
+.about-inner .introduce .introduce-inner .discription dl dd{font-size: var(--font-size--text); transition: 1s;}
+.about-inner .introduce .introduce-inner .discription dl.channel dd{position: relative; display: inline-block; margin-right: 7px; /* text-decoration: underline; */}
+.about-inner .introduce .introduce-inner .discription .channel dd::after{position: absolute; left: 0; bottom: -2px; content: ""; width: 100%; height: 2px; background: #fff;}
+.about-inner .introduce .introduce-inner .discription .channel dd:nth-of-type(1)::before{position: absolute; left: 115%; top: 2px; content: ""; width: 2px; height: 20px; background: #fff; transform: rotate(15deg);}
+.about-inner .introduce .introduce-inner .discription dd.self{line-height: 1.3;}
 /* scroll-circle */
-.about-inner .scroll{
-    display: block;
-    position: absolute;
-    right: 100px;
-    bottom: 50px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    /* background: #FFA63D; */
-    border: 1px solid #fff;
-    /* opacity: 0.3; */
+.about-inner .scroll{display: block; position: fixed; right: 100px; bottom: 50px; width: 100px; height: 100px; border-radius: 50%; /* background: #FFA63D; */ border: 1px solid rgba(255, 255, 255, 0.5);transition: 0s;}
+@keyframes scroll{
+    0%{transform: translateY(-25px);}
+    40%,60%{transform: translateY(0px);}
+    100%{transform: translateY(25px);}
 }
-.about-inner .scroll::after{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(45deg);
-    content: "";
-    width: 1vw;
-    height: 1vw;
-    border: 2px solid #fff;
-    border-top: none;
-    border-left: none;
-}
-.about-inner .scroll::before{
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 0.5s;
-}
-.about-inner .scroll:hover::before{
-    display: block;
-    transform: scale(1);
-}
-@keyframes scroll-down {
-    0%{
-        
-    }
-}
+.about-inner .scroll span{position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); display: block; width: 100px; height: 25px; overflow: hidden;}
+.about-inner .scroll span::after{opacity: 0.5;position: absolute;margin-left: 25px; display: inline-block; content: "scroll";font-size: 20px;animation: scroll 2.5s linear infinite;}
+/*
+.about-inner .introduce .introduce-inner .scroll::after{position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotate(45deg); content: ""; width: 1vw; height: 1vw; border: 2px solid #fff; border-top: none; border-left: none;}
+*/
+.about-inner .introduce .introduce-inner .scroll::before{position: absolute; content: "Projects♡"; width: 100%; height: 100%; color: #000;text-align: center;line-height: 100px; background-color: #fff; border-radius: 50%; transform: scale(0); transition: 0.3s;}
+.about-inner .introduce .introduce-inner .scroll:hover::before{display: block; transform: scale(1);}
+.about-inner .introduce .introduce-inner .scroll:hover span::after{opacity: 0;}
+
+#about.active .about-inner .scroll{ opacity: 0;}
+/* #about.active .about-inner h1{pointer-events: none;}
+#about.active .about-inner h1::after{background-color: #151515; opacity: 1;}
+#about.active .about-inner .introduce{}
+#about.active .about-inner .introduce .introduce-inner .discription dl dd{opacity: 1;} */

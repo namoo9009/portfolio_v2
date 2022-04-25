@@ -1,7 +1,10 @@
 /* projects.css */
 
 .projects-inner h1{
-    position: relative;
+    position: absolute;
+    left: 350px;
+    border: 1px solid red;
+    padding-bottom: 50px;
 }
 .projects-inner h1::after{
     position: absolute;
