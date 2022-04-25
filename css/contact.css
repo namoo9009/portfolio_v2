@@ -1,9 +1,8 @@
-/* projects.css */
-
-.projects-inner h1{
+/* contact.css */
+.contact-inner h1{
     position: relative;
 }
-.projects-inner h1::after{
+.contact-inner h1::after{
     position: absolute;
     left: 0;
     bottom: 0;
