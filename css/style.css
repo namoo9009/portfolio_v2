@@ -38,8 +38,8 @@ a{color: #fff; text-decoration: none;}
     #header .header-inner{padding-left: 350px;padding-right: 100px;}
     #main{width: 100%;}
     #main #about{position: relative; width: 100%;}
-    #main #about .about-inner{position: relative; padding-left: 350px;padding-right: 100px;}
-    #main #projects{position: relative; padding-top: 70px; width: 100%; border: 1px solid red;}
+    #main #about .about-inner{position: relative; padding-left: 350px;padding-right: 100px;padding-bottom: 100px;}
+    #main #projects{position: relative; width: 100%; border: 1px solid #fff;}
     #footer{width: 100%;}
     /* .inner{padding-right: 100px;padding-left: 350px;} */
 
@@ -63,13 +63,13 @@ a{color: #fff; text-decoration: none;}
 /* main */
 #main h1{width: 1200px; text-transform: uppercase; letter-spacing: -0.2vw; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold);}
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
     :root{
         --font-family--italic: 'PT Serif', serif;
         --font-family--normal:'Gothic A1', sans-serif;
         --font-weght-bold: 700;
         --font-weght-semibold: 500;
-        --font-size--h1: 110px;
+        --font-size--h1: 120px;
         --font-size--large: 40px;
         --font-size--medium: 30px;
         --font-size--small: 20px;

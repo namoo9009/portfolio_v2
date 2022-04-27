@@ -3,12 +3,12 @@ window.onload = () => {
     // scroll이 about bottom에 위치할 경우 project 위로 올라오기
     const header = document.querySelector('.header-inner');
     const sectionAbout = document.querySelector('#about');
-    const sectionAboutH = sectionAbout.offsetHeight;
-    const sectionAboutInner = document.querySelector('.about-inner');
+
     const sectionProject = document.querySelector('#projects');
     const aboutHeading = document.querySelector('.about-inner h1');
     const introduce = document.querySelector('.introduce');
-
+    
+    let sectionAboutH;
     let scrollY;
     let aboutTop;
     let aboutBottom;
@@ -21,6 +21,8 @@ window.onload = () => {
     
     
     function setProperty() {
+        windowH = window.innerHeight;
+        sectionAboutScrollTop = sectionAbout.offsetHeight - windowH;
         scrollY = window.scrollY;
         aboutTop = scrollY + sectionAbout.getBoundingClientRect().top;
         aboutBottom = aboutTop + sectionAbout.offsetHeight;
@@ -29,7 +31,8 @@ window.onload = () => {
         projectTopScroll = projectTop - window.innerHeight;
         projectMove = scrollY - projectTopScroll;
         aboutHeadingTopScroll = scrollY + aboutHeading.getBoundingClientRect().top;
-
+        console.log(sectionAboutH)
+        
         const parallaxStartValue = 0;
         const parallaxSpeed = 200;
         const aboutParallaxBody = window.innerHeight;
@@ -47,13 +50,10 @@ window.onload = () => {
     
     function headerEffect() {
         setProperty();
-        console.log(scrollY)
         if(scrollY > 70) {
             header.classList.add('active');
-            sectionAbout.classList.add('active');
         } else {
             header.classList.remove('active');
-            sectionAbout.classList.remove('active');
         }
     }
 
@@ -83,8 +83,20 @@ window.onload = () => {
     window.addEventListener('mousemove', (e) => {
         const x = e.clientX;
         const y = e.clientY;
-        jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 5}px)`;
+        jsMove.style.transform = `translateX(${-x / 2}px) translateY(${-y / 4}px)`;
     })
+
+    //scroll-circle
+    function scrollHide() {
+        setProperty();
+        if(scrollY > sectionAboutScrollTop) {
+            sectionAbout.classList.add('active');
+        } else {
+            sectionAbout.classList.remove('active');
+        }
+    }
+
+
 
 
 
@@ -115,6 +127,7 @@ window.onload = () => {
     window.addEventListener('scroll', () => {
         headerEffect();
         projectMoveUp();
+        scrollHide();
         
         
     })
@@ -122,6 +135,7 @@ window.onload = () => {
     function init() {
         headerEffect();
         projectMoveUp();
+        scrollHide();
     }
 
     init();

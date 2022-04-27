@@ -1,6 +1,6 @@
 /* about.css */
 
-.about-inner{border: 1px solid red; display: flex; flex-direction: column;}
+.about-inner{display: flex; flex-direction: column;}
 .about-inner h1{position: absolute; top: 300px; left: 350px; line-height: 1.1;}
 .about-inner h1 span{display: block;}
 /* 글자효과 */
@@ -16,10 +16,10 @@
 		clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
 	}
 }
-.about-inner h1 .js-move{opacity: 0; display: none; z-index: -1; position: absolute; display: inline-flex; flex-direction: column; right: -250px; bottom: -100px; width: 24vw; height: 28vw;}
-.about-inner h1 .js-move .txt{position: relative; top: 0; left: 0px; transform: translateX(1.35vw) translateY(0.9vw); font-family: 'Noto Sans KR', sans-serif; text-transform: uppercase; font-weight: 900; font-size: 4vw; color: #000; text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;}
+.about-inner h1 .js-move{opacity: 0; display: block; z-index: 1; position: absolute; display: inline-flex; flex-direction: column; right: 200px; bottom: -50px; width: 350px; height: 450px;pointer-events: none;}
+.about-inner h1 .js-move .txt{position: relative; top: 0; left: 0px; transform: translateX(1.35vw) translateY(0.9vw); font-family: 'Noto Sans KR', sans-serif; text-transform: uppercase; font-weight: 900; font-size:  calc(var(--font-size--h1) * 0.6); color: #000; text-shadow: -1px -1px 0 #EFD81D, 1px -1px 0 #EFD81D, -1px 1px 0 #EFD81D, 1px 1px 0 #EFD81D;}
 .about-inner h1 .js-move .txt::after{position: absolute; content: attr(data-text); top: 0; left: 0; color: #EFD81D; animation: js-wave 3s ease-in-out infinite;}
-.about-inner h1 .js-move .icon-js{width: 100%; height: 100%; font-size: 25vw; color: #EFD81D; transition: 0.4s;}
+.about-inner h1 .js-move .icon-js{width: 100%; height: 100%; font-size: calc(var(--font-size--h1) * 3.5); color: #EFD81D; transition: 0.4s;}
 
 /* introduce */
 .about-inner .introduce{margin-top: 700px;}
@@ -38,7 +38,7 @@
 .about-inner .introduce .introduce-inner .discription .channel dd:nth-of-type(1)::before{position: absolute; left: 115%; top: 2px; content: ""; width: 2px; height: 20px; background: #fff; transform: rotate(15deg);}
 .about-inner .introduce .introduce-inner .discription dd.self{line-height: 1.3;}
 /* scroll-circle */
-.about-inner .scroll{display: block; position: fixed; right: 100px; bottom: 50px; width: 100px; height: 100px; border-radius: 50%; /* background: #FFA63D; */ border: 1px solid rgba(255, 255, 255, 0.5);transition: 0s;}
+.about-inner .scroll{opacity: 1; position: fixed; right: 100px; bottom: 70px; width: 100px; height: 100px; border-radius: 50%; /* background: #FFA63D; */ border: 1px solid rgba(255, 255, 255, 0.5);transition: 0.3s;}
 @keyframes scroll{
     0%{transform: translateY(-25px);}
     40%,60%{transform: translateY(0px);}
@@ -53,8 +53,12 @@
 .about-inner .introduce .introduce-inner .scroll:hover::before{display: block; transform: scale(1);}
 .about-inner .introduce .introduce-inner .scroll:hover span::after{opacity: 0;}
 
-#about.active .about-inner .scroll{ opacity: 0;}
+#about.active .about-inner .scroll{ opacity: 0; /*transform: translateY(-50px);*/transform: scale(0);}
 /* #about.active .about-inner h1{pointer-events: none;}
 #about.active .about-inner h1::after{background-color: #151515; opacity: 1;}
 #about.active .about-inner .introduce{}
 #about.active .about-inner .introduce .introduce-inner .discription dl dd{opacity: 1;} */
+
+@media screen and (max-width: 1400px) {
+	.about-inner .scroll{left: 100px;}
+}
