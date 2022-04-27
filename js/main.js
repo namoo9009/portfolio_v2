@@ -31,7 +31,6 @@ window.onload = () => {
         projectTopScroll = projectTop - window.innerHeight;
         projectMove = scrollY - projectTopScroll;
         aboutHeadingTopScroll = scrollY + aboutHeading.getBoundingClientRect().top;
-        console.log(sectionAboutH)
         
         const parallaxStartValue = 0;
         const parallaxSpeed = 200;
