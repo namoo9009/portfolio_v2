@@ -39,9 +39,6 @@ window.onload = () => {
         const aboutParallaxBody = window.innerHeight;
 
         parallaxThisTop = scrollY - parallaxSpeed * 100
-
-
-        
     }
 
 
@@ -52,7 +49,7 @@ window.onload = () => {
     // 스크롤을 내리면 header가 위로 사라짐 
     function headerFadeOut() {
         setProperty();
-        if(scrollY > 70) {
+        if(scrollY > 0) {
             header.classList.add('active');
         } else {
             header.classList.remove('active');
@@ -101,14 +98,43 @@ window.onload = () => {
         const parallaxStartValue = 300;
         const aboutScrollPercent = scrollY / aboutH;
         
-        const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)))
+        const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
 
-        console.log(scrollDistance);
         sectionProject.style.transform = `translateY(${scrollDistance}px)`;
+    }
+
+    //mobile-project--기기 옆에서 나타나기
+    function project4SlideShow() {
+        setProperty();
+        
+        const project4 = document.querySelector('.project-4');
+        const project4Device = document.querySelector('.project-4 .project-img figure')
+        const project4Num = document.querySelector('.project-4 .num')
+        const slideStartValue = 5000;
+        const project4ScrollPercent = scrollY / (scrollY + project4.getBoundingClientRect().top);
+        const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project4ScrollPercent)));
+        
+        project4Device.style.transform = `translateX(${-scrollDistance}px)`
+        project4Num.style.transform = `translateX(${-scrollDistance * 0.3}px)`
+    }
+    function project5SlideShow() {
+        setProperty();
+        
+        const project5 = document.querySelector('.project-5');
+        const project5Device = document.querySelector('.project-5 .project-img figure')
+        const project5Num = document.querySelector('.project-5 .num')
+        const slideStartValue = 5000;
+        const project5ScrollPercent = scrollY / (scrollY + project5.getBoundingClientRect().top);
+        const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project5ScrollPercent)));
+        
+        console.log(scrollDistance)
+        project5Device.style.transform = `translateX(${scrollDistance}px)`
+        project5Num.style.transform = `translateX(${scrollDistance * 0.3}px)`
     }
 
 
 
+/* ------------------------------------------------------------------*/
 
     window.addEventListener('scroll', () => {
         setProperty();
@@ -116,6 +142,8 @@ window.onload = () => {
         aboutHeadingMoveUp();
         scrollCircleFadeOut();
         projectMoveUp();
+        project4SlideShow();
+        project5SlideShow();
         
     });
 

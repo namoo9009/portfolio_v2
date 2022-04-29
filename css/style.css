@@ -41,7 +41,10 @@ a{color: #fff; text-decoration: none;}
     #main #about .about-inner{position: relative; padding-left: 350px;padding-right: 100px;padding-bottom: 0px;}
     #main #projects{transform: translateY(300px); width: 100%;}
     #main #projects .projects-inner{padding-left: 350px;}
+    #main #contact{position: relative; width: 100%;}
+    #main #contact .contact-inner{padding-top: 300px;}
     #footer{width: 100%;}
+    #footer .footer_inner{padding-bottom: 100px;}
     /* .inner{padding-right: 100px;padding-left: 350px;} */
 
 /* header */
@@ -57,6 +60,13 @@ overflow: hidden;}
 
 /* main */
 #main h1{width: 1200px; text-transform: uppercase; letter-spacing: -0.2vw; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold);}
+
+/* footer */
+.footer_inner{}
+.footer_inner>p{margin-left: 350px; padding-top: 20px; width: 1200px; border-top: 1px solid #fff;}
+.footer_inner .slide-text{padding-top: 100px; white-space: nowrap;  font-size: var(--font-size--h1); text-transform: uppercase; color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff;}
+.footer_inner .slide-text .italic{font-family: var(--font-family--italic);}
+.footer_inner .slide-text .normal{font-family: var(--font-family--normal);}
 
 @media screen and (max-width: 1400px) {
     :root{

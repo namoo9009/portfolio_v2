@@ -1,13 +1,7 @@
 /* contact.css */
-.contact-inner h1{
-    position: relative;
-}
-.contact-inner h1::after{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-}
+.contact-inner h1{position: relative; margin-left: 350px; padding-bottom: 50px;}
+.contact-inner h1::after{position: absolute; left: 0; bottom: 0; content: ""; width: 100%; height: 1px; background-color: #fff;}
+.contact-inner .call{display: flex; margin-left: 350px; padding: 100px 0; width: 1200px;}
+.contact-inner .call dl{flex: 1;}
+.contact-inner .call dl dt{padding-bottom: 5px; font-size: calc(var(--font-size--text) * 1.5); font-weight: var(--font-weght-bold);}
+.contact-inner .call dl dd{font-size: var(--font-size--text); transition: 1s;}

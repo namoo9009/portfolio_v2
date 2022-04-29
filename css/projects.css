@@ -3,10 +3,10 @@
 .projects-inner h1{position: relative; left: 0px; top: 0px;padding-bottom: 50px;}
 .projects-inner h1::after{position: absolute; left: 0; bottom: 0; content: ""; width: 100%; height: 1px;background: #fff;}
 .projects-inner .pc{position: relative; display: flex;flex-direction: column;  max-width: 1500px;}
-.projects-inner .pc>div{position: relative; width: 1300px; padding: 70px 0px; border: 1px solid red;}
+.projects-inner .pc>div{position: relative; width: 1300px; padding: 70px 0px;}
 
 .projects-inner .pc>div .project-img{position: sticky; top: calc(65vh - 180px); display: inline-block; margin-top: 0px;}
-.projects-inner .pc>div .project-img .device::after{z-index: -10; position: absolute; display: block; background: #151515; content: ""; left: 0; bottom: -60px;  width: 100%; height: 100px;}
+.projects-inner .pc>div .project-img .device::after{z-index: -10; position: absolute; display: block; background: #151515; content: ""; left: 0; top: 380px;  width: 100%; height: 150px;}
 .projects-inner .pc>div .project-img .device img{position: relative; width: 600px;}
 
 .projects-inner .pc>div .project-img .product{position: absolute; left: 22px; top: 20px; width: 550px; height: 360px; overflow: hidden;}
@@ -32,7 +32,7 @@
 .projects-inner .pc .project-1 .num{position: absolute; right: 225px; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
 .projects-inner .pc .project-1 .project-img{float: right; margin-left: -50px;}
 .projects-inner .pc project-1 .project-img .device img{width: 600px;}
-.projects-inner .pc project-1 .project-img .product{position: absolute; left: 22px; top: 20px; width: 550px; height: 360px; overflow: hidden; border: 1px solid red;}
+.projects-inner .pc project-1 .project-img .product{position: absolute; left: 22px; top: 20px; width: 550px; height: 360px; overflow: hidden;}
 .projects-inner .pc project-1 .project-img .product img{position: absolute; left: 0px; top: 0px; z-index: -1; display: block; width: 550px;}
 .projects-inner .pc .project-1 .description{}
 .projects-inner .project .project-1 .description{float: left; margin-right: 50px;}
@@ -47,12 +47,11 @@
 .projects-inner .pc .project-3 .description{float: left;}
 
 /* 공통-mobile */
-.projects-inner .mobile{}
-.projects-inner .mobile>div{display: flex; padding-top: 200px; width: 1300px; border: 1px solid red;}
-.projects-inner .mobile>div .project-img{position: relative; display: inline-flex; border: 1px solid red;}
-.projects-inner .mobile>div .project-img .device{width: 250px;}
-.projects-inner .mobile>div .project-img .product{z-index: -1; position: absolute;left: 17px; top: 20px; width: 205px; border-radius: 10px;}
-.projects-inner .mobile>div .description{max-width: 600px; border: 1px solid red;}
+.projects-inner .mobile>div{position: relative; display: flex; padding-top: 200px; width: 1300px; overflow: hidden;}
+.projects-inner .mobile>div .project-img{position: relative; display: inline-flex;}
+.projects-inner .mobile>div .project-img .device{position: relative; top: 50%; transform: translateY(-50%); width: 250px;}
+.projects-inner .mobile>div .project-img .product{z-index: -1; position: absolute;left: 17px; top: 50%; transform: translateY(-50%); width: 205px; border-radius: 10px;}
+.projects-inner .mobile>div .description{max-width: 600px;}
 .projects-inner .mobile>div .description h2{position: relative; padding-bottom: 30px; font-size: var(--font-size--large);font-weight: var(--font-weght-semibold);}
 .projects-inner .mobile>div .description dl{position: relative;left: 0px; display: flex;padding: 30px 0; border-bottom: 1px solid #fff;}
 .projects-inner .mobile>div .description dl:not(.text){word-break: keep-all;}
@@ -66,13 +65,13 @@
 .projects-inner .mobile>div .description .site dd ul li a{display: block; width: 100%; height: 100%;}
 
 /* mobile-project4 */
-.projects-inner .mobile .project-4{position: relative;}
-.projects-inner .mobile .project-4 .num{position: absolute; left: 70px; top: 50%; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
-.projects-inner .mobile .project-4 .project-img{flex: 1; order: 1;}
+.projects-inner .mobile .project-4 .num{z-index: -1; display: inline-block; position: absolute; left: 80px; top: 50%; bottom: 480px; width: 160px; height: 160px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .mobile .project-4 .project-img{flex: 1; order: 1; display: flex; justify-content: flex-start;}
+.projects-inner .mobile .project-4 .project-img figure{position: relative; margin-left: 300px;}
 .projects-inner .mobile .project-4 .description{flex: 1; order: 2; margin-left: 90px;}
 
 /* mobile-project5 */
-.projects-inner .mobile .project-5{position: relative;}
-.projects-inner .mobile .project-5 .num{position: absolute; right: 70px; top: 50%; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
-.projects-inner .mobile .project-5 .project-img{flex: 1; order: 2; display: flex;}
-.projects-inner .mobile .project-5 .description{flex: 1; order: 1; margin-left: 90px;}
+.projects-inner .mobile .project-5 .num{z-index: -1; position: absolute; right: 80px; top: 50%; bottom: 480px; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold); font-family: var(--font-family--italic); color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff; opacity: 0.7;}
+.projects-inner .mobile .project-5 .project-img{flex: 1; order: 2; display: flex; justify-content: flex-end;}
+.projects-inner .mobile .project-5 .project-img figure{ position: relative; margin-right: 300px;}
+.projects-inner .mobile .project-5 .description{flex: 1; order: 1; margin-right: 90px;}
