@@ -3,11 +3,12 @@ window.onload = () => {
     // scroll이 about bottom에 위치할 경우 project 위로 올라오기
     const header = document.querySelector('.header-inner');
     const sectionAbout = document.querySelector('#about');
-
     const sectionProject = document.querySelector('#projects');
+
     const aboutHeading = document.querySelector('.about-inner h1');
     const introduce = document.querySelector('.introduce');
     
+    let aboutH;
     let sectionAboutH;
     let scrollY;
     let aboutTop;
@@ -24,6 +25,7 @@ window.onload = () => {
         windowH = window.innerHeight;
         sectionAboutScrollTop = sectionAbout.offsetHeight - windowH;
         scrollY = window.scrollY;
+        aboutH = sectionAbout.getBoundingClientRect().height;
         aboutTop = scrollY + sectionAbout.getBoundingClientRect().top;
         aboutBottom = aboutTop + sectionAbout.offsetHeight;
         aboutBottomScroll = aboutBottom - window.innerHeight;
@@ -47,7 +49,8 @@ window.onload = () => {
 /* ------------------------------------------------------------------*/
 // header
     
-    function headerEffect() {
+    // 스크롤을 내리면 header가 위로 사라짐 
+    function headerFadeOut() {
         setProperty();
         if(scrollY > 70) {
             header.classList.add('active');
@@ -56,46 +59,35 @@ window.onload = () => {
         }
     }
 
-
-
-
-
 /* ------------------------------------------------------------------*/
 // about
 
-    const aboutChange = document.querySelectorAll('.about-inner .change');
-    const jsMove = document.querySelector('.js-move')
+    const jsMove = document.querySelector('.js-move');
 
-    // 글자 mouseover시 효과
-    aboutChange.forEach((item) => {
-        item.addEventListener('mouseover', () => {
-            jsMove.style.opacity = '1';
-            jsMove.style.display = 'block';
-        })
-        item.addEventListener('mouseout', () => {
-            jsMove.style.opacity = '0';
-            jsMove.style.display = 'none';
-        })
-    })
 
-    // JS Icon 위치설정
-    window.addEventListener('mousemove', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        jsMove.style.transform = `translateX(${-x / 2}px) translateY(${-y / 4}px)`;
-    })
 
-    //scroll-circle
-    function scrollHide() {
+    // 스크롤을 내리면 h1의 위치가 위로 서서히 올라감
+    function aboutHeadingMoveUp() {
+        setProperty();
+        aboutHeading.style.transform = `translateY(${-scrollY * 0.15}px)`;
+    }
+
+    // about 섹션을 벗어나면 scroll-circle이 사라짐
+    function scrollCircleFadeOut() {
         setProperty();
         if(scrollY > sectionAboutScrollTop) {
             sectionAbout.classList.add('active');
         } else {
             sectionAbout.classList.remove('active');
         }
-    }
-
-
+    };
+    
+    // JS Icon의 위치를 마우스의 좌표값으로 설정
+    sectionAbout.addEventListener('mousemove', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        jsMove.style.transform = `translateX(${-x / 5}px) translateY(${-y / 4}px)`;
+    });
 
 
 
@@ -103,39 +95,37 @@ window.onload = () => {
 /* ------------------------------------------------------------------*/
 // projects
 
+    //
     function projectMoveUp() {
         setProperty();
-        aboutHeading.style.transform = `translateY(${-scrollY * 0.3}px)`
+        const parallaxStartValue = 300;
+        const aboutScrollPercent = scrollY / aboutH;
+        
+        const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)))
 
-        // if(scrollY >= aboutHeadingTopScroll * 2) {
-        //     sectionAbout.classList.add('active');
-            
-        // } else {
-        //     sectionAbout.classList.remove('active');
-        // }
-        // if(scrollY >= aboutBottomScroll + sectionAboutH * 0.3) {
-        //     sectionAbout.classList.add('active')
-        //     sectionAboutInner.style.transform = `scale(0.9)`
-        // } else {
-        //     sectionAbout.classList.remove('active')
-        //     sectionAboutInner.style.transform = `scale(1)`
-        // }
+        console.log(scrollDistance);
+        sectionProject.style.transform = `translateY(${scrollDistance}px)`;
     }
+
+
 
 
     window.addEventListener('scroll', () => {
-        headerEffect();
+        setProperty();
+        headerFadeOut();
+        aboutHeadingMoveUp();
+        scrollCircleFadeOut();
         projectMoveUp();
-        scrollHide();
         
-        
-    })
+    });
+
+    window.addEventListener('resize', () => {
+        setProperty();
+    });
 
     function init() {
-        headerEffect();
-        projectMoveUp();
-        scrollHide();
-    }
+        setProperty();
+    };
 
     init();
 
