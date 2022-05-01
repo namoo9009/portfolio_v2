@@ -1,7 +1,7 @@
 window.onload = () => {
 
     // scroll이 about bottom에 위치할 경우 project 위로 올라오기
-    const header = document.querySelector('.header-inner');
+    const header = document.querySelector('#header');
     const sectionAbout = document.querySelector('#about');
     const sectionProject = document.querySelector('#projects');
 
@@ -17,6 +17,7 @@ window.onload = () => {
     let projectTop;
     let projectMove;
     let aboutHeadingTopScroll;
+    let weelDeltaY;
     const aboutMoveDistance = 400;
 
     
@@ -49,11 +50,13 @@ window.onload = () => {
     // 스크롤을 내리면 header가 위로 사라짐 
     function headerFadeOut() {
         setProperty();
-        if(scrollY > 0) {
-            header.classList.add('active');
-        } else {
-            header.classList.remove('active');
-        }
+        window.addEventListener('wheel', (e) => {
+            if(scrollY > 50 && e.deltaY > 0) {  // 내려갈때
+                header.classList.add('fade');
+            } else {  // 올라갈때
+                header.classList.remove('fade');
+            }
+        });
     }
 
 /* ------------------------------------------------------------------*/
@@ -127,7 +130,6 @@ window.onload = () => {
         const project5ScrollPercent = scrollY / (scrollY + project5.getBoundingClientRect().top);
         const scrollDistance = Math.max(slideStartValue - slideStartValue, Math.min(slideStartValue, slideStartValue - (slideStartValue * project5ScrollPercent)));
         
-        console.log(scrollDistance)
         project5Device.style.transform = `translateX(${scrollDistance}px)`
         project5Num.style.transform = `translateX(${scrollDistance * 0.3}px)`
     }
@@ -144,15 +146,21 @@ window.onload = () => {
         projectMoveUp();
         project4SlideShow();
         project5SlideShow();
-        
     });
 
     window.addEventListener('resize', () => {
         setProperty();
     });
 
+
     function init() {
         setProperty();
+        headerFadeOut();
+        aboutHeadingMoveUp();
+        scrollCircleFadeOut();
+        projectMoveUp();
+        project4SlideShow();
+        project5SlideShow();
     };
 
     init();
