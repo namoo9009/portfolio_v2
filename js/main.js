@@ -57,6 +57,13 @@ window.onload = () => {
                 header.classList.remove('fade');
             }
         });
+        // window.addEventListener('scroll', () => {
+        //     if(scrollY > 50 && e.deltaY > 0) {  // 내려갈때
+        //         header.classList.add('fade');
+        //     } else {  // 올라갈때
+        //         header.classList.remove('fade');
+        //     }
+        // });
     }
 
 /* ------------------------------------------------------------------*/
@@ -95,18 +102,39 @@ window.onload = () => {
 /* ------------------------------------------------------------------*/
 // projects
 
-    //
-    function projectMoveUp() {
-        setProperty();
-        const parallaxStartValue = 300;
-        const aboutScrollPercent = scrollY / aboutH;
+    // 스크롤을 내릴때 프로젝트 전체 섹션이 위로 올라간다.
+    // function projectMoveUp() {
+    //     setProperty();
+    //     const parallaxStartValue = 300;
+    //     const aboutScrollPercent = scrollY / aboutH;
         
-        const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
+    //     const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
 
-        sectionProject.style.transform = `translateY(${scrollDistance}px)`;
+    //     console.log(scrollDistance);
+    //     sectionProject.style.transform = `translateY(${scrollDistance}px)`;
+    // }
+
+    const productImg = document.querySelector('.project-img');
+    // console.log(productImg)
+    // 디바이스가 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
+    const observerObtion = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1,
     }
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                productImg.classList.add('active');
+            } else {
+                productImg.classList.remove('active');
+            }
+        });
+    }
+    const observer = new IntersectionObserver(observerCallback, observerObtion);
+    observer.observe(productImg);
 
-    //mobile-project--기기 옆에서 나타나기
+    //mobile-project--디바이스가 옆에서 가운데로 스르르 나타나기
     function project4SlideShow() {
         setProperty();
         
@@ -143,7 +171,7 @@ window.onload = () => {
         headerFadeOut();
         aboutHeadingMoveUp();
         scrollCircleFadeOut();
-        projectMoveUp();
+        // projectMoveUp();
         project4SlideShow();
         project5SlideShow();
     });
@@ -158,7 +186,7 @@ window.onload = () => {
         headerFadeOut();
         aboutHeadingMoveUp();
         scrollCircleFadeOut();
-        projectMoveUp();
+        // projectMoveUp();
         project4SlideShow();
         project5SlideShow();
     };

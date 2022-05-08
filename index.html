@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,17 +11,16 @@
     <script src="js/main.js"></script>
 </head>
 <body>
-<div id="loading-page">
-    <div class="loading-page-inner inner">
-        <h1><span class="num">2022</span>NaMi's<br>web portfolio</h1>
-        <p>Let's start<span class="change on"> now</span></p>
-    </div>
-</div>
 <div id="wrap">
     <header id="header">
         <div class="header-inner inner">
-            <h1><a href="index.html">Portfolio</a></h1>
-            <span class="header-nav">Nami<span class="bar"></span><br>Growing<br>Developer</span>
+            <h1>
+                <a href="index.html">Portfolio</a>
+            </h1>
+            <span class="header-nav">Nami
+                <span class="bar"></span>
+                <br>Growing<br>Developer
+            </span>
             <nav class="header-nav">
                 <ul>
                     <li><a href="#about">About Me</a></li>
@@ -35,9 +34,9 @@
         <section id="about">
             <div class="about-inner inner">
                 <h1>
-                    <span>I am</span>
-                    <span class="change">a front-end</span>
-                    <span class="change ">developer</span>
+                    <span class="text_mask">I am</span>
+                    <span class="text_mask change">a front-end</span>
+                    <span class="text_mask change ">developer</span>
                     <span class="js-move">
                         <span class="txt" data-text="I love">I love</span>
                         <span class="icon-js">
@@ -51,15 +50,14 @@
                         <div class="profile">
                             <dl>
                                 <dt class="blind">프로필 사진</dt>
-                                <dd class="profile-img">
-                                </dd>
+                                <dd class="profile-img"></dd>
                             </dl>
                         </div>
                         <div class="discription">
                             <dl class="channel_test">
                                 <dt>Channel</dt>
-                                <dd><a href="#">Github</a></dd>
-                                <dd><a href="#">Blog</a></dd>
+                                <dd><a href="https://github.com/namoo9009" target="_blank" title="새창으로 열기">Github</a></dd>
+                                <dd><a href="https://blog.naver.com/namoo9009" target="_blank" title="새창으로 열기">Blog</a></dd>
                             </dl>
                             <dl>
                                 <dt>Skill</dt>
@@ -101,17 +99,20 @@
                         <div class="num">01</div>
                         <div class="project-img">
                             <figure class="device">
-                                <img src="images/tablet_mockup.png" alt="">
+                                <img src="images/tablet_mockup.png" alt="태블릿 기기">
                             </figure>
                             <figure class="product">
-                                <img src="images/thetastable.png" alt="">
+                                <img src="images/thetastable_screen.png" alt="데테이스터블 프로젝트">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>더테이스터블</h2>
+                            <h2>
+                                <span class="sub_title">기업사이트_반응형 웹Ⅰ</span><br>
+                                <span class="main_title">더테이스터블</span>
+                            </h2>
                             <dl>
                                 <dt>작업기간</dt>
-                                <dd>2022.02 ~ 2022.03</dd>
+                                <dd>2022.02 ~ 2022.05</dd>
                             </dl>
                             <dl>
                                 <dt>기여도</dt>
@@ -123,25 +124,46 @@
                             </dl>
                             <dl>
                                 <dt>프로젝트 목적</dt>
-                                <dd>CSS와 JS만을 이용하여 다양한 인터렉션 구현해보고, 이를 통해 CSS와 JS에 대한 이해도 및 숙련도 향상을 위해 클론코딩 진행 </dd>
+                                <dd>
+                                    기업 웹 사이트 제작 숙련도 향상을 위해 더테이스터블의 메인페이지와 서브페이지 2곳을 클론코딩하였고, 코드의 효율성 및 가독성 향상을 위해 코드 리팩토링 진행</dd>
                             </dl>
                             <dl>
                                 <dt>주요 업무</dt>
                                 <dd>
                                     <ul>
-                                        <li>반응형 웹으로 제작(Mobile, Tablet, PC)</li>
-                                        <li>웹표준 준수 - HTML/CSS 유효성검사 100% 통과</li>
-                                        <li>순수 CSS와 JS로 SlideShow, FullPage, CountScript 구현</li>
+                                        <li>반응형 웹 제작(PC, Tablet, Mobile)</li>
+                                        <li>웹표준 준수
+                                            <ul>
+                                                <li>웹접근성 준수</li>
+                                                <li>HTML/CSS W3C유효성검사 Pass</li>
+                                                <li>크로스 브라우징-CSS3 Vendeor prefix 적용</li>
+                                            </ul>
+                                        </li>
+                                        <li>코드 리팩토링
+                                            <ul>
+                                                <li>코드 가독성 향상을 위해 HTML, CSS, JS코드를 구조화하여 작성</li>
+                                                <li>JS에서 여러번 중복되는 코드를 함수로 만들어 코드 효율성과 재사용성 높임</li>
+                                                <li>JS에서 데이터 관리 함수를 만들어 데이터를 저장하였고, 하나의 함수로 데이터를 관리할 수 있어 유지보수성 개선됨</li>
+                                            </ul>
+                                        </li>
+                                        <li>페이지별 주요 업무
+                                            <ul>
+                                                <li>메인페이지-순수 CSS와 JS를 사용하여 다양한 인터렉션 구현</li>
+                                                <li>서브페이지1-form 속성을 사용하여 고객센터 페이지 구현</li>
+                                                <li>서브페이지2-table 속성을 사용하여 채용정보 페이지 구현</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </dd>
                             </dl>
-
                             <dl class="site">
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="#">Web View</a></li>
-                                        <li><a href="#">Github</a></li>
+                                        <li><a href="https://namoo9009.github.io/responsiveWeb_theTastable/index" target="_blank" title="새창으로 열기">메인페이지</a></li>
+                                        <li><a href="https://namoo9009.github.io/responsiveWeb_theTastable_sub1/sub1" target="_blank" title="새창으로 열기">서브페이지1</a></li>
+                                        <li><a href="https://namoo9009.github.io/responsiveWeb_theTastable_sub2/sub2" target="_blank" title="새창으로 열기">서브페이지2</a></li>
+                                        <li><a href="https://github.com/namoo9009/responsiveWeb_theTastable" target="_blank" title="새창으로 열기">Github</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -153,14 +175,17 @@
                         <div class="num">02</div>
                         <div class="project-img">
                             <figure class="device">
-                                <img src="images/tablet_mockup.png" alt="">
+                                <img src="images/tablet_mockup.png" alt="태블릿 기기">
                             </figure>
                             <figure class="product">
-                                <img src="images/nisystem.JPG" alt="">
+                                <img src="images/nisystem.JPG" alt="NIsystem 프로젝트">
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>NIsystem</h2>
+                            <h2>
+                                <span class="sub_title">기업사이트_반응형 웹Ⅱ</span><br>
+                                <span class="main_title">CJ ONE</span>
+                            </h2>
                             <dl>
                                 <dt>작업기간</dt>
                                 <dd>2022.02 ~ 2022.03</dd>
@@ -191,8 +216,8 @@
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="#">Web View</a></li>
-                                        <li><a href="#">Github</a></li>
+                                        <li ><a href="http://www.nisystem.co.kr" target="_blank" title="새창으로 열기">HomePage</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">View Detail</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -211,18 +236,25 @@
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>아름다운가게</h2>
+                            <h2>
+                                <span class="sub_title">기획 및 화면개발_반응형 웹Ⅲ</span><br>
+                                <span class="main_title">NIsystem</span>
+                            </h2>
                             <dl>
-                                <dt>업무 담당 기간</dt>
+                                <dt>작업기간</dt>
                                 <dd>2022.02 ~ 2022.03</dd>
                             </dl>
                             <dl>
-                                <dt>담당업무</dt>
-                                <dd>기획, 퍼블리싱, 운영</dd>
+                                <dt>기여도</dt>
+                                <dd>기획, 디자인, FE(1명, 100%) / BE(1명)</dd>
                             </dl>
                             <dl>
-                                <dt>사용언어<br>및 프로그램</dt>
-                                <dd>PowerPoint, Apache Zeppelin, Google Analiytics, HTML, CSS</dd>
+                                <dt>사용언어<br>및 개발환경</dt>
+                                <dd>XD, HTML, CSS, JavaScript</dd>
+                            </dl>
+                            <dl>
+                                <dt>프로젝트 목적</dt>
+                                <dd>CSS와 JS만을 이용하여 다양한 인터렉션 구현해보고, 이를 통해 CSS와 JS에 대한 이해도 및 숙련도 향상을 위해 클론코딩 진행 </dd>
                             </dl>
                             <dl>
                                 <dt>주요 업무</dt>
@@ -238,8 +270,8 @@
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="#">Web View</a></li>
-                                        <li><a href="#">Github</a></li>
+                                        <li ><a href="http://www.nisystem.co.kr" target="_blank" title="새창으로 열기">HomePage</a></li>
+                                        <li><a href="#" target="_blank" title="새창으로 열기">View Detail</a></li>
                                     </ul>
                                 </dd>
                             </dl>
@@ -256,7 +288,10 @@
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>Kakao</h2>
+                            <h2>
+                                <span class="sub_title">React 모바일 웹</span><br>
+                                <span class="main_title">Chatting Talk</span>
+                            </h2>
                             <dl>
                                 <dt>작업기간</dt>
                                 <dd>2022.02 ~ 2022.03</dd>
@@ -286,7 +321,7 @@
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="#">Web View</a></li>
+                                        <li ><a href="#">View Web</a></li>
                                         <li><a href="#">Github</a></li>
                                     </ul>
                                 </dd>
@@ -302,7 +337,10 @@
                             </figure>
                         </div>
                         <div class="description">
-                            <h2>Kakao</h2>
+                            <h2>
+                                <span class="sub_title">모바일 웹 기획 및 UIUX Design</span><br>
+                                <span class="main_title">Homecent</span>
+                            </h2>
                             <dl>
                                 <dt>작업기간</dt>
                                 <dd>2022.02 ~ 2022.03</dd>
@@ -332,7 +370,7 @@
                                 <dt class="blind">참고 자료</dt>
                                 <dd>
                                     <ul>
-                                        <li ><a href="#">Web View</a></li>
+                                        <li ><a href="#">View Web</a></li>
                                         <li><a href="#">Github</a></li>
                                     </ul>
                                 </dd>
