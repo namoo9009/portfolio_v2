@@ -30,8 +30,8 @@
 .about-inner .introduce .introduce-inner{position: relative; width: 1200px;}
 .about-inner .introduce .introduce-inner::after{display: block; content: "";clear: both;}
 /* introduce-profile */
-.about-inner .introduce .introduce-inner .profile{position: relative; top: 20px; float: left;}
-.about-inner .introduce .introduce-inner .profile .profile-img{width: 321px; height: 500px; background: url(../images/profile1.jpg) no-repeat 50% 50%; background-size: 100%; transition: 300ms linear;}
+.about-inner .introduce .introduce-inner .profile{position: relative; float: left;}
+.about-inner .introduce .introduce-inner .profile .profile-img{width: 321px; height: 420px; background: url(../images/profile1.jpg) no-repeat 50% 50%; background-size: 100%; transition: 300ms linear;}
 .about-inner .introduce .introduce-inner .profile .profile-img:hover{background-size: 110%;}
 /* introduce-discription */
 .about-inner .introduce .introduce-inner .discription{position: relative; top: 0px; float: left; padding-left: 80px; padding-bottom: 20px; width: 600px;}

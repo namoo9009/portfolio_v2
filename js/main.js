@@ -106,17 +106,15 @@ window.onload = () => {
     // function projectMoveUp() {
     //     setProperty();
     //     const parallaxStartValue = 300;
-    //     const aboutScrollPercent = scrollY / aboutH;
-        
+    //     const aboutScrollPercent = scrollY / aboutH;   
     //     const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
-
     //     console.log(scrollDistance);
     //     sectionProject.style.transform = `translateY(${scrollDistance}px)`;
     // }
 
-    const productImg = document.querySelector('.project-img');
-    // console.log(productImg)
     // 디바이스가 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
+    const productImg = document.querySelectorAll('.project-img');
+
     const observerObtion = {
         root: null,
         rootMargin: '0px',
@@ -125,14 +123,16 @@ window.onload = () => {
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                productImg.classList.add('active');
+                entry.target.classList.add('active');
             } else {
-                productImg.classList.remove('active');
+                entry.target.classList.remove('active');
             }
         });
     }
     const observer = new IntersectionObserver(observerCallback, observerObtion);
-    observer.observe(productImg);
+    productImg.forEach(item => {
+        observer.observe(item);
+    })
 
     //mobile-project--디바이스가 옆에서 가운데로 스르르 나타나기
     function project4SlideShow() {
