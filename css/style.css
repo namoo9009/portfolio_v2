@@ -29,6 +29,9 @@
 *{box-sizing: border-box; margin: 0; padding: 0;}
 body{overflow-x: hidden; font-family: var(--font-family--normal); background: #151515; color: #fff; word-break: break-all; font-size: var(--font-size--text); cursor:default;}
 a{color: #fff; text-decoration: none;}
+/* 스크롤바 스타일링 */
+body::-webkit-scrollbar{width: 15px}
+body::-webkit-scrollbar-thumb{height: 30%;background-color: rgba(255, 255, 255, 0.1);}
 
 /* layout */
 #loading-page{position: ; width: 100%; height: 100vh;}
@@ -39,13 +42,11 @@ a{color: #fff; text-decoration: none;}
     #main #about{position: relative; width: 100%;}
     #main #about .about-inner{position: relative; padding-left: 350px;padding-right: 100px;padding-bottom: 100px;}
     #main #projects{transform: translateY(0px); padding-top: 150px; width: 100%;}
-    #main #projects .projects-inner{padding-left: 350px;}
+    #main #projects .projects-inner{padding-left: 150px; display: inline-block;}
     #main #contact{position: relative; width: 100%;}
     #main #contact .contact-inner{padding-top: 200px;}
     #footer{width: 100%;}
     #footer .footer_inner{padding-bottom: 100px;}
-    /* .inner{padding-right: 100px;padding-left: 350px;} */
-
 
 /* header */
 #header{opacity: 1; transition: 0.5s; overflow: hidden;}
@@ -63,7 +64,6 @@ a{color: #fff; text-decoration: none;}
 #main h1{width: 1200px; text-transform: uppercase; letter-spacing: -0.2vw; font-size: var(--font-size--h1); font-weight: var(--font-weght-bold);}
 
 /* footer */
-.footer_inner{}
 .footer_inner>p{margin-left: 350px; padding-top: 20px; width: 1200px; border-top: 1px solid #fff;}
 .footer_inner .slide-text{padding-top: 100px; white-space: nowrap;  font-size: var(--font-size--h1); text-transform: uppercase; color: #000; text-shadow: -1px 1px #fff, -1px -1px #fff, 1px -1px #fff, 1px 1px #fff;}
 .footer_inner .slide-text>div{position: relative; display: flex;}

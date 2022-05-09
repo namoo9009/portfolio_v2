@@ -51,26 +51,22 @@ window.onload = () => {
     function headerFadeOut() {
         setProperty();
         window.addEventListener('wheel', (e) => {
-            if(scrollY > 50 && e.deltaY > 0) {  // 내려갈때
+            if(scrollY > 0 && e.deltaY > 0) {  // 내려갈때
                 header.classList.add('fade');
             } else {  // 올라갈때
                 header.classList.remove('fade');
             }
         });
-        // window.addEventListener('scroll', () => {
-        //     if(scrollY > 50 && e.deltaY > 0) {  // 내려갈때
-        //         header.classList.add('fade');
-        //     } else {  // 올라갈때
-        //         header.classList.remove('fade');
-        //     }
-        // });
     }
 
 /* ------------------------------------------------------------------*/
 // about
 
+    const aboutTitle = document.querySelector('#about h1');
     const jsMove = document.querySelector('.js-move');
-
+    function aboutTitleShow() {
+        aboutTitle.classList.add('active');
+    }
 
 
     // 스크롤을 내리면 h1의 위치가 위로 서서히 올라감
@@ -108,13 +104,28 @@ window.onload = () => {
     //     const parallaxStartValue = 300;
     //     const aboutScrollPercent = scrollY / aboutH;   
     //     const scrollDistance = Math.max(parallaxStartValue - parallaxStartValue, Math.min(parallaxStartValue, parallaxStartValue - (parallaxStartValue * aboutScrollPercent)));
-    //     console.log(scrollDistance);
     //     sectionProject.style.transform = `translateY(${scrollDistance}px)`;
     // }
 
-    // 디바이스가 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
-    const productImg = document.querySelectorAll('.project-img');
 
+    const productImg = document.querySelectorAll('.project-img');
+    const projectTitle = document.querySelector('#projects h1');
+
+    // 프로젝트 타이틀이 뷰포트 안에 들어오면 밑줄이 스르르 나타나기
+    const projectObserverObtion = {threshold: 1};
+    const projectObserverCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    };
+    const projectObserver = new IntersectionObserver(projectObserverCallback, projectObserverObtion);
+    projectObserver.observe(projectTitle)
+
+    // 태블릿, 모바일 목업이 뷰포트 안에 들어오면 디바이스 안의 스크린샷 이미지의 애니메이션 활성화
     const observerObtion = {
         root: null,
         rootMargin: '0px',
@@ -128,11 +139,11 @@ window.onload = () => {
                 entry.target.classList.remove('active');
             }
         });
-    }
+    };
     const observer = new IntersectionObserver(observerCallback, observerObtion);
     productImg.forEach(item => {
         observer.observe(item);
-    })
+    });
 
     //mobile-project--디바이스가 옆에서 가운데로 스르르 나타나기
     function project4SlideShow() {
@@ -182,6 +193,7 @@ window.onload = () => {
 
 
     function init() {
+        aboutTitleShow();
         setProperty();
         headerFadeOut();
         aboutHeadingMoveUp();
