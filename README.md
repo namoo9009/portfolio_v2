@@ -1,4 +1,4 @@
-# portfolio_v2
+# 포트폴리오
 그동안 만든 프로젝트들을 보여주기 위한 포트폴리오입니다.
 
 - 미리보기 : https://namoo9009.github.io/portfolio_v2/index
