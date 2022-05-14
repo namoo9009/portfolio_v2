@@ -16,8 +16,8 @@
 .projects-inner .pc>div .description dl:not(.text){word-break: keep-all;}
 .projects-inner .pc>div .description dl dt{width: 130px; font-weight: var(--font-weght-bold);}
 .projects-inner .pc>div .description dl dd{flex: 1;}
-.projects-inner .pc>div .description dl dd>ul>li{margin-left: 10px; list-style: decimal; line-height: 1.7;}
-.projects-inner .pc>div .description dl dd>ul>li>ul>li{margin-left: 10px;list-style:disc}
+.projects-inner .pc>div .description dl dd>ul>li{margin-left: 10px; list-style:disc; line-height: 1.7;}
+.projects-inner .pc>div .description dl dd>ul>li>ul>li{margin-left: 20px;list-style:disc}
 /* site */
 .projects-inner .pc>div .description .site{border-bottom: none; padding-top: 10px;}
 .projects-inner .pc>div .description .site dd ul{display: flex; list-style: none;}
@@ -75,8 +75,8 @@
 .projects-inner .mobile>div .description dl:not(.text){word-break: keep-all;}
 .projects-inner .mobile>div .description dl dt{width: 130px; font-weight: var(--font-weght-bold);}
 .projects-inner .mobile>div .description dl dd{flex: 1;}
-.projects-inner .mobile>div .description dl dd>ul>li{margin-left: 10px; list-style:decimal; line-height: 1.7;}
-.projects-inner .mobile>div .description dl dd>ul>li>ul>li{margin-left: 10px;list-style:disc}
+.projects-inner .mobile>div .description dl dd>ul>li{margin-left: 10px; list-style:disc; line-height: 1.7;}
+.projects-inner .mobile>div .description dl dd>ul>li>ul>li{margin-left: 20px;list-style:disc}
 /* site */
 .projects-inner .mobile>div .description .site{border-bottom: none; padding-top: 10px;}
 .projects-inner .mobile>div .description .site dd ul{display: flex; list-style: none;}
